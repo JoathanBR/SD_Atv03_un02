@@ -5,16 +5,17 @@ class Server(object):
     def welcomeMessage(self, name):
         certo = 0
         errado = 0
-        questao = name.split(";")
-        alternativa = questao[2]
+        questao = name.split(";") #separar a string em um array, tendo o corte no ;
+        alternativa = questao[2] #ela pega a posição 2 onde estão as alternativas V ou F
 
-        for x in alternativa:
+        for x in alternativa: #percorre o array para verificar quais estão certas ou erradas
             if(x == "V"):
                 certo = certo + 1
             else:
                 errado = errado + 1    
-                
-        return ("Questão ",questao[0], " com ", questao[1], " alternativas. Possui ", certo, " certas e ", errado, " erradas!")
+
+        resultado = "Questão ",questao[0], " com ", questao[1], " alternativas. Possui ", certo, " certas e ", errado, " erradas!"
+        return  resultado
 
 def startServer():
     server = Server()
